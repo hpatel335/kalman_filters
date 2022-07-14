@@ -13,9 +13,8 @@ Kalman Filters generally work by taking in a series of observations, their uncer
 - [Tracking and Kalman Filtering Made Easy](https://www.wiley.com/en-us/Tracking+and+Kalman+Filtering+Made+Easy-p-9780471184072)
 
 ## Basic Walkthrough 
+To demonstrate the capabilities of a Kalman Filter, we'll walk through a simple example involving a stationary system (imagine a plane parked on a tarmac). Let's say you want to find the position (will only consider the simple 1D case now) of the system, and you have at your dispoal measurements from an INS (which provide accelerations) and position from a GPS system).  
 
 ### Uncorrected Position 
-
-### Bias 
 
 ### Corrected Position 
