@@ -18,6 +18,8 @@ To demonstrate the capabilities of a Kalman Filter, we'll walk through a simple 
 ### Uncorrected Position 
 Trying the simplest thing first, lets look at the position estimates we get from the GPS and the INS. The GPS directly provides the position, but we'll need to integrate the accelerations from the INS to get position.
 
-<img src="./plots/uncorrected_pos.png" width="650">
+<img src="./plots/uncorrected_pos.png" width="600">
+
+This clearly shows that these system can be very inaccurate on their own. Biases in the INS lead to inaccurate accelerations which propogate into the large errors in position. A stationary system should move 2km over an hour. Similarly, uncertainties in the GPS also produce a trajectory that indicates the system was in motion, even though it was not. Although depending on your application, the error tolerance of the GPS may be good enough, and in that case you could get by with just the GPS. But to show how handly kalman filters can be, let's look at the position estimates using an open and closed loop kalman filter. 
 
 ### Corrected Position 
