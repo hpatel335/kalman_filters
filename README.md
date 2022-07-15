@@ -23,3 +23,7 @@ Trying the simplest thing first, lets look at the position estimates we get from
 This clearly shows that these system can be very inaccurate on their own. Biases in the INS lead to inaccurate accelerations which propogate into the large errors in position. A stationary system should move 2km over an hour. Similarly, uncertainties in the GPS also produce a trajectory that indicates the system was in motion, even though it was not. Although depending on your application, the error tolerance of the GPS may be good enough, and in that case you could get by with just the GPS. But to show how handly kalman filters can be, let's look at the position estimates using an open and closed loop kalman filter. 
 
 ### Corrected Position 
+
+<img src="./plots/corrected_pos.png" width="600">
+
+The open loop trajectory, although better than the integrated INS position estimate, still doesn't correctly capture the behaviour of the system. The open loop kalman filter represents a case where a kalman filter is used to estimate the error in position and update the estimate of the true position, but for each iteration only the position obtained from integrating the INS data is used to determine the true position. However, in the closed loop case, each iteration updates up on the previous estimate of the postion. As a result, we get a trajectory that very closely matches the actual behaviour of the system! 
